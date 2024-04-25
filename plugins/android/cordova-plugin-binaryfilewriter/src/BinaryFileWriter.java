@@ -17,7 +17,7 @@ public class BinaryFileWriter extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
     try {
-      if (action.equals("writeBinaryArray")) {
+      if ("writeBinaryArray".equals(action)) {
         long offset = this.writeBinaryArray(args.getString(0), args.getString(1), args.getInt(2));
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, offset));
         return true;
